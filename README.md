@@ -104,7 +104,7 @@ If you Linux computer has 20 CPUs for example, then only 4 out of 20 CPUs are in
 > **Key takeaway:** Values much lower than total CPUs mean the system is lightly loaded / under-utilised and far from CPU oversubscription.
 
 
-** B) Running tasks**
+**B) Running tasks**
 
 ```
 Tasks: 80, 180 thr: 4 running
@@ -112,13 +112,31 @@ Tasks: 80, 180 thr: 4 running
 
 Meaning:
 
-  - The system currently has 80 processes and 180 total threads.
-  - Only 4 tasks are actively running on CPUs at this moment.
-  - On a 20-CPU workstation, this indicates the system is lightly loaded and far from CPU oversubscription (most cores are idle).
+The system currently has 
+  - 80 processes
+  - 180 total threads
+  - 4 actively running tasks
 
-> The ‘running’ value shows how many tasks are actively competing for CPU; when this number is much lower than the number of CPU cores, the workstation is under-utilised.
+The ‘thr’ value shows the total number of software threads that exist on the system, not how many are using the CPU. Only the ‘running’ value tells you how many threads are actively competing for CPU cores.
+On a 20-CPU workstation, this indicates the system is lightly loaded and far from CPU oversubscription (most cores are idle).
 
-** C) Per-CPU bars**
+> The danger sign is “running”, not “thr”.
+
+Examples:
+
+Light load (your case):
+
+```
+180 thr; 4 running; 20 CPUs → under-utilised
+```
+
+Oversubscribed case:
+
+```
+500 thr; 60 running; 20 CPUs → oversubscribed
+```
+
+**C) Per-CPU bars**
 
 **Healthy system:**
 
