@@ -26,6 +26,7 @@
 
 <br />
 
+
 ## **Step 1 — Know your machine**
 
 **How many CPUs does my Linux computer have?**
@@ -33,36 +34,34 @@
 ```
 nproc
 ```
-
-> 20
+>20
 
 **How much memory (RAM) does my Linux computer have**
 
 ```
 free -h
 ```
-
-> 125 Gi
+>125 Gi
 
 This is your absolute scheduling budget.
 
-## **Step 2 — Open a live monitor**
+---
+## **Step 2 — Open a monitor**
 
 ```
 htop
 ```
-
 This is your main real-time diagnostic panel.
 
+<br /> 
+<p align="center"> <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_upper_ref_codeahoy.png" width="100%" > </p> <p> <strong>Figure 1. Upper section of the htop output screen. </p> 
+<br />
 
 
-<br /> <p align="center"> <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_upper_ref_codeahoy.png" width="100%" > </p> <p> <strong>Figure 1. htop output screen- upper section. </p> <br />
+**The three most important numbers are**
 
 
-**In this htop output upper section, the three most important numbers are:**
-
-
-A) Load average (top right)
+Load average (top right)
 
 Load average answers one question: “How many tasks, on average, wanted the CPU at the same time?”. You interpret it relative to the number of CPUs.
 
@@ -76,15 +75,16 @@ Now            → ~4 heavy tasks want CPU
 5 minutes ago  → ~3 heavy tasks wanted CPU
 15 minutes ago → ~3 heavy tasks wanted CPU
 
-> Values much lower than total CPUs mean the system is lightly loaded / under-utilised and far from CPU oversubscription.
+
+> **Key takeaway:** Values much lower than total CPUs mean the system is lightly loaded / under-utilised and far from CPU oversubscription.
 
 
-
+<br />
 
 
 <br /> <p align="center"> <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_lower_ref_codeahoy.png" width="100%" > </p> <p> <strong>Figure 1. htop output screen- lower section. </p> <br />
 
-
+<br />
 
 
 The htop output screen is explained below.
