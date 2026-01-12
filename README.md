@@ -58,17 +58,15 @@ This is your main real-time diagnostic panel.
   <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_upper_ref_codeahoy.png" width="100%">
 </p>
 
-<p><strong>Figure 1.</strong> Upper section of the htop output screen.</p>
+<p><strong>Figure 1. Upper section of the htop output screen.</strong> </p>
 <br />
 
 
-### **The three most important numbers are**
+**The three most important numbers are**
 
 Load average (top right). Load average answers one question: 
 
-***How many tasks, on average, wanted the CPU at the same time?*** 
-
-You interpret it relative to the number of CPUs.
+> How many tasks, on average, wanted the CPU at the same time?
 
 An example:
 
@@ -76,10 +74,13 @@ An example:
 Load average: 3.26 2.64 2.38
 ```
 
-Now            → ~4 heavy tasks want CPU
-5 minutes ago  → ~3 heavy tasks wanted CPU
-15 minutes ago → ~3 heavy tasks wanted CPU
+- Now            → ~4 heavy tasks want CPU
+- 5 minutes ago  → ~3 heavy tasks wanted CPU
+- 15 minutes ago → ~3 heavy tasks wanted CPU
 
+You interpret it relative to the number of CPUs.
+
+If you Linux computer has 20 CPUs, the only 4 out 20 are in demand.
 
 > **Key takeaway:** Values much lower than total CPUs mean the system is lightly loaded / under-utilised and far from CPU oversubscription.
 
