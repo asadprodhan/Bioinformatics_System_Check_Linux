@@ -68,7 +68,7 @@ htop
 ```
 This is your main real-time diagnostic panel.
 
-**Upper Section**
+## **Upper Section**
 
 <br /> 
 <p align="center">
@@ -153,13 +153,24 @@ Oversubscribed case:
   - Noticeable lag (slow terminal, delayed UI, noisy fans)
   - Jobs get slower as more are added, not faster
 
+## **Lower Section**
 
-<br /> <p align="center"> <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_lower_ref_codeahoy.png" width="100%" > </p> <p> <strong>Figure 1. htop output screen- lower section. </p> <br />
+<br /> <p align="center"> <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_lower_ref_codeahoy.png" width="100%" > </p> <p> <strong>Figure 2. </strong> The lower panel of htop displays per-process CPU and memory usage, allowing verification of whether a workflow is driven by one multi-threaded bioinformatics job or by multiple competing processes. A healthy system shows many threads from one dominant program; an oversubscribed system shows many heavy programs running simultaneously. This distinction is a key indicator of correct workflow scheduling versus CPU oversubscription. </p> <br />
 
-<br />
+**Lower section of htop (process table) — what each field means**
 
+  - PID – Unique process ID assigned by Linux.
+  - USER – The user account that owns the process.
+  - PRI – Kernel scheduling priority of the process.
+  - NI – “Niceness” value (user-space priority hint; −20 highest, 19 lowest).
+  - VIRT – Total virtual memory requested by the process.
+  - RES – Resident memory actually held in RAM (real usage).
+  - SHR – Shared memory used with other processes.
+  - S – Process state (R = running, S = sleeping, etc.).
+  - CPU% – Percentage of CPU currently being used.
+  - MEM% – Percentage of total system RAM being used.
+  - TIME+ – Total CPU time consumed since the process started.
+  - Command – The command/program that launched the process.
 
-The htop output screen is explained below.
-
-
+> The lower panel tells you who is running, how much CPU they are using, and how much real memory they actually occupy.
 
