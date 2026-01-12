@@ -75,7 +75,7 @@ This is your main real-time diagnostic panel.
   <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_upper_ref_codeahoy.png" width="100%">
 </p>
 
-<p><strong>Figure 1. Upper section of the htop output screen.</strong> </p>
+<p><strong> Figure 1.</strong> The upper panel of htop summarises real-time system-level resource usage, including per-CPU activity, memory and swap consumption, and overall load average. These metrics allow rapid assessment of whether a workstation is under-utilised, efficiently saturated, or oversubscribed. A healthy system shows load averages close to (but not far above) the number of CPUs, with running tasks roughly matching available cores; an oversubscribed system shows load averages far exceeding CPU count, indicating excessive thread contention rather than true parallelism. </p>
 <br />
 
 
