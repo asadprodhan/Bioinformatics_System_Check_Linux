@@ -1,8 +1,50 @@
-# Bioinformatics System Check (Linux) 🧬🖥️
+<h1 align="center">How to Tell if a Bioinformatics Workstation is CPU-Oversubscribed</h1>
 
-A small, practical **Linux system health toolkit for bioinformatics** workflows (Nextflow, containers, HTS pipelines).  
-Use it to quickly inspect **CPU, memory, disk, I/O, processes**, and common bottlenecks before/during runs.
 
+<h3 align="center">Asad Prodhan<sup>*</sup></h3>
+
+
+<div align="center"><b> DPIRD Diagnostics and Laboratory Services </b></div>
+
+<div align="center"><b> Department of Primary Industries and Regional Development </b></div>
+
+
+<div align="center"><b> 3 Baron-Hay Court, South Perth, WA 6151, Australia </b></div>
+
+
+<div align="center"><b> <sup>*</sup>Correspondence: Asad.Prodhan@dpird.wa.gov.au </b></div>
+
+
+<br />
+
+
+<p align="center">
+  <a href="https://github.com/asadprodhan/blastn/tree/main#GPL-3.0-1-ov-file"><img src="https://img.shields.io/badge/License-GPL%203.0-yellow.svg" alt="License GPL 3.0" style="display: inline-block;"></a>
+  <a href="https://orcid.org/0000-0002-1320-3486"><img src="https://img.shields.io/badge/ORCID-green?style=flat-square&logo=ORCID&logoColor=white" alt="ORCID" style="display: inline-block;"></a>
+</p>
+
+
+<br />
+
+## **Step 1 — Know your machine**
+
+**How many CPUs does my Linux computer have?**
+
+```
+nproc
+```
+
+> 20
+
+**How much memory (RAM) does my Linux computer have**
+
+```
+free -h
+```
+
+> 125 Gi
+
+ 
 ---
 
 ## Why this repo exists
