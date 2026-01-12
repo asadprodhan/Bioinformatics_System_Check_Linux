@@ -80,12 +80,10 @@ Load average: 3.26 2.64 2.38
 
 You interpret it relative to the number of CPUs.
 
-If you Linux computer has 20 CPUs, the only 4 out 20 are in demand.
+If you Linux computer has 20 CPUs for example, then only 4 out of 20 CPUs are in demand.
 
 > **Key takeaway:** Values much lower than total CPUs mean the system is lightly loaded / under-utilised and far from CPU oversubscription.
 
-
-<br />
 
 
 <br /> <p align="center"> <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_lower_ref_codeahoy.png" width="100%" > </p> <p> <strong>Figure 1. htop output screen- lower section. </p> <br />
