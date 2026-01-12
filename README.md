@@ -54,16 +54,21 @@ htop
 This is your main real-time diagnostic panel.
 
 <br /> 
-<p align="center"> <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_upper_ref_codeahoy.png" width="100%" > </p> <p> <strong>Figure 1. Upper section of the htop output screen. </p> 
+<p align="center">
+  <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_upper_ref_codeahoy.png" width="100%">
+</p>
+
+<p><strong>Figure 1.</strong> Upper section of the htop output screen.</p>
 <br />
 
 
-**The three most important numbers are**
+### **The three most important numbers are**
 
+Load average (top right). Load average answers one question: 
 
-Load average (top right)
+***How many tasks, on average, wanted the CPU at the same time?*** 
 
-Load average answers one question: “How many tasks, on average, wanted the CPU at the same time?”. You interpret it relative to the number of CPUs.
+You interpret it relative to the number of CPUs.
 
 An example:
 
