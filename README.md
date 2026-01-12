@@ -56,9 +56,16 @@ Performance cores provide high single-job speed, while efficiency cores add extr
 ```
 free -h
 ```
->125 Gi
+>Mem: 125 Gi
+>Swap: 8.0 Gi
 
-This is your absolute scheduling budget.
+What is swap memory?
+
+  - Swap memory (swap space) is an area on disk that the operating system uses as an extension of RAM.
+  - When physical RAM starts filling up, Linux can move inactive memory pages from RAM to disk (swap) and free RAM for processes that need it urgently
+  - So swap is not extra RAM — it is emergency overflow space.
+
+However, the above logical CPUs and memory (excluding swap) are your absolute scheduling budget.
 
 ---
 ## **Step 2 — Open a monitor**
