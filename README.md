@@ -93,9 +93,9 @@ An example:
 Load average: 3.26 2.64 2.38
 ```
 
-- Now            → ~4 heavy tasks want CPU
-- 5 minutes ago  → ~3 heavy tasks wanted CPU
-- 15 minutes ago → ~3 heavy tasks wanted CPU
+- Now            → ~ 4 heavy tasks want CPU
+- 5 minutes ago  → ~ 3 heavy tasks wanted CPU
+- 15 minutes ago → ~ 3 heavy tasks wanted CPU
 
 You interpret it relative to the number of CPUs.
 
@@ -136,20 +136,23 @@ Oversubscribed case:
 500 thr; 60 running; 20 CPUs → oversubscribed
 ```
 
-**C) Per-CPU bars**
+**C) Per-CPU bars (real-time visual cue)**
 
-**Healthy system:**
+**Healthy, well-scheduled system:**
 
-  - most cores green
-  - smooth movement
-  - system responsive
+  - Most CPU bars are active but not constantly maxed out
+  - Smooth, steady movement rather than chaotic spikes
+  - Load roughly matches CPU count
+  - System remains responsive (terminal, mouse, UI)
 
 **Oversubscribed system:**
 
-  - all cores pinned
-  - laggy terminal
-  - fans screaming
-  - jobs slower, not faster
+  - All CPU bars pinned at or near 100% for long periods
+  - Rapid flickering and uneven spikes across cores
+  - Load far higher than total CPUs
+  - Noticeable lag (slow terminal, delayed UI, noisy fans)
+  - Jobs get slower as more are added, not faster
+
 
 <br /> <p align="center"> <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_lower_ref_codeahoy.png" width="100%" > </p> <p> <strong>Figure 1. htop output screen- lower section. </p> <br />
 
