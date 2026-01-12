@@ -31,10 +31,25 @@
 
 **How many CPUs does my Linux computer have?**
 
+Before you find out the number of CPUs in your Linux computer, re-visit the CPU terminology (modern hybrid processors).
+
+- Socket (physical CPU): The actual processor chip plugged into the motherboard
+- Physical core: A real independent processing unit inside the CPU that can execute instructions
+- Performance core (P-core): A high-speed core designed for heavy, compute-intensive tasks and supports hyper-threading
+- Efficiency core (E-core): A lower-power core designed for background or highly parallel light tasks and does not support hyper-threading
+- Logical core (logical CPU): What the operating system sees as a CPU; a schedulable execution unit exposed by physical cores and hyper-threading. These are the “CPUs” you see in: htop, nproc, Nextflow cpus, load average interpretation
+- Thread (hardware thread): A single execution slot built on a core; logical CPUs correspond to hardware threads that software can run on
+
+Now, find out the logical CPUs in your Linux computer that you can allocate in your workflow.
+
 ```
 nproc
 ```
 >20
+
+`nproc` reports the number of logical CPUs available to Linux (i.e., CPU threads seen by the scheduler). This is the correct number to use when setting tool thread counts, configuring Nextflow cpus, and interpreting load average. It may be higher than physical cores in your Linux computer if hyper-threading / Simultaneous Multithreading (SMT) is enabled.
+
+Performance cores provide high single-job speed, while efficiency cores add extra parallel capacity; Linux exposes both as logical CPUs, but they are not equally powerful.
 
 **How much memory (RAM) does my Linux computer have**
 
@@ -53,6 +68,8 @@ htop
 ```
 This is your main real-time diagnostic panel.
 
+**Upper Section**
+
 <br /> 
 <p align="center">
   <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_upper_ref_codeahoy.png" width="100%">
@@ -64,7 +81,9 @@ This is your main real-time diagnostic panel.
 
 **The three most important numbers are**
 
-Load average (top right). Load average answers one question: 
+** A) Load average (top right)** 
+
+Load average answers one question:
 
 > How many tasks, on average, wanted the CPU at the same time?
 
@@ -85,6 +104,34 @@ If you Linux computer has 20 CPUs for example, then only 4 out of 20 CPUs are in
 > **Key takeaway:** Values much lower than total CPUs mean the system is lightly loaded / under-utilised and far from CPU oversubscription.
 
 
+** B) Running tasks**
+
+```
+Tasks: 80, 180 thr: 4 running
+```
+
+Meaning:
+
+  - The system currently has 80 processes and 180 total threads.
+  - Only 4 tasks are actively running on CPUs at this moment.
+  - On a 20-CPU workstation, this indicates the system is lightly loaded and far from CPU oversubscription (most cores are idle).
+
+> The ‘running’ value shows how many tasks are actively competing for CPU; when this number is much lower than the number of CPU cores, the workstation is under-utilised.
+
+** C) Per-CPU bars**
+
+**Healthy system:**
+
+  - most cores green
+  - smooth movement
+  - system responsive
+
+**Oversubscribed system:**
+
+  - all cores pinned
+  - laggy terminal
+  - fans screaming
+  - jobs slower, not faster
 
 <br /> <p align="center"> <img src="https://github.com/asadprodhan/Bioinformatics_System_Check_Linux/blob/main/htop_lower_ref_codeahoy.png" width="100%" > </p> <p> <strong>Figure 1. htop output screen- lower section. </p> <br />
 
