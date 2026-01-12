@@ -81,7 +81,7 @@ This is your main real-time diagnostic panel.
 
 **The three most important numbers are**
 
-** A) Load average (top right)** 
+**A) Load average (top right)** 
 
 Load average answers one question:
 
